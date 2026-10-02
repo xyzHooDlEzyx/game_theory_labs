@@ -19,6 +19,27 @@ C = [[-4,5],
     [2,1],
     [3,-4]]
 
+D = [[-4,2],
+    [-1,5],
+    [1,4],
+    [2,3],
+    [0,1],
+    [-2,0]]
+
+E = [[-4,-2],
+    [-3,5],
+    [3,4],
+    [3,5],
+    [0,1],
+    [1,2]]
+
+F = [[-4,5],
+    [5,-4],
+    [-2,-1],
+    [0,-2],
+    [2,1],
+    [3,-3]]
+
 class Game:
     def __init__(self, matrix):
         self.matrix = matrix
@@ -107,7 +128,15 @@ class Game:
 
 
 if __name__ == "__main__":
-    for name, matrix in (("A", A), ("B", B), ("C", C)):
-        print(f"\nMatrix {name}")
-        Game(matrix).solve_matrix()
+    examples = (
+        ("One saddle point", (("A", A), ("D", D))),
+        ("Multiple saddle points", (("B", B), ("E", E))),
+        ("No saddle points", (("C", C), ("F", F))),
+    )
+
+    for category, matrices in examples:
+        print(f"\n{'=' * 60}\n{category}\n{'=' * 60}")
+        for name, matrix in matrices:
+            print(f"\nMatrix {name}")
+            Game(matrix).solve_matrix()
     

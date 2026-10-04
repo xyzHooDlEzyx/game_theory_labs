@@ -14,6 +14,8 @@ build/
 dist/
 *.egg-info/
 
+tmp/
+
 # Test, coverage, and type-check caches
 .pytest_cache/
 .coverage

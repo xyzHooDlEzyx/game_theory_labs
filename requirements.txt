@@ -42,3 +42,4 @@ typing==3.7.4.3
 urllib3==2.8.0
 ushlex==0.99.1
 websocket-client==1.9.2
+PuLP>=3.0,<4
